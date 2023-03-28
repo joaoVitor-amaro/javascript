@@ -1,0 +1,22 @@
+* {
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+}
+
+body {
+    background-color: aquamarine;
+}
+
+header {
+    text-align: center;
+}
+
+section {
+    max-width: 450px;
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 0 auto;
+}
+span {
+    color: red;
+}

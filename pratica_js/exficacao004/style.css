@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+body {
+    background-color: #057e3b; 
+}
+
+header {
+    text-align: center;
+    color: white;
+}
+
+section {
+    background-color: white;
+    max-width: 400px;
+    border: 1px solid black;
+    padding: 10px;
+    margin: auto;
+    
+}
+input {
+    border-radius: 8px;
+}
+
+input#input_valor {
+    margin-left: 26px;
+}
+
+input#button_calcular_desconto {
+    display: block;
+    margin: 0 auto;
+    font: normal 13pt Arial;
+}
+
+div {
+    text-align: justify;
+}

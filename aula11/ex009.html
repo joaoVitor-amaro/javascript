@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central</title>
+</head>
+<body>
+    <h1>Sistemas de multas</h1>
+    Nacionalidade? <input type="text" id="txt_nasc">
+    <input type="button" value="Verificar" onclick="verificar_nasc()">
+    <div>
+        <p id="resultado_velocidade"></p>
+    </div>
+    <script>
+        function verificar_nasc() {
+            var nasc = window.document.getElementById("txt_nasc").value 
+            if (nasc == 'Brasil') {
+                window.document.getElementById("resultado_velocidade").innerHTML = "Brasileiro"
+            } else {
+                window.document.getElementById("resultado_velocidade").innerHTML = "Estrangeiro"
+            }
+        }
+    </script>
+</body>
+</html>

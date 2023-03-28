@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central</title>
+</head>
+<body>
+    <h1>Sistemas de multas</h1>
+    velocidade do carro? <input type="number" id="txt_vel" placeholder="km">
+    <input type="button" value="Verificar" onclick="verificar_vel()">
+    <p id="resultado_velocidade"></p>
+    <script>
+        function verificar_vel() {
+            var vel = Number(window.document.getElementById("txt_vel").value)
+            if ( vel > 60) {
+                window.document.getElementById("resultado_velocidade").innerHTML = `A velocidade do seu carro é ${vel}km. Com isso, você foi multado por ultrapassar o limite.`
+            } else {
+                window.document.getElementById("resultado_velocidade").innerHTML = `Velocidade ok .`
+            }
+        }
+    </script>
+</body>
+</html>
