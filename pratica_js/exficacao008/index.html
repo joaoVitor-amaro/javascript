@@ -9,22 +9,27 @@
 </head>
 <body>
     <header>
-        <h1>Apro</h1>
+        <h1>Compras</h1>
     </header>
     <section>
         <div>
             <label for="">Valor <span>*</span></label>
-            <input type="text" placeholder="R$">
+            <input type="text" placeholder="R$" id="money">
         </div>
         <p>Pagemento:
             <input type="radio" name="rad_pagamento" id="" checked>
             <label for="">À vista no dinheiro</label>
             <input type="radio" name="rad_pagamento" id="">
             <label for="">Débito</label>
-            <input type="radio" name="" id="">
+            <input type="radio" name="rad_pagamento" id="">
             <label for="">Crédito</label>
         </p>
-        <input type="button" value="Calcular">
+        <p id="parcelas">
+            <label for="">Parcelas</label>
+            <input type="text">
+        </p>
+        <input type="button" value="Calcular" onclick="calcular()">
     </section>
+    <script src="script.js"></script>
 </body>
 </html>
