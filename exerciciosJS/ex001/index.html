@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1° Exercicio</title>
+</head>
+<body>
+    <script>
+        var nomeFuncionario = window.prompt("Nome do Funcionário:")
+        var salario = Number(window.prompt("Salário: "))
+        document.write(`O funcionário ${nomeFuncionario} tem um salário de ${salario.toLocaleString("pt-br", {style: "currency", currency: "BRL"})}`)
+    </script>
+</body>
+</html>
