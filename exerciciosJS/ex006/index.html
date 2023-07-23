@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var qt_moneyReal = Number(window.prompt("Valor: R$"))
+        var valor_dolar = 4.78
+        var momey_dolar = qt_moneyReal / valor_dolar
+        window.alert(`Com ${qt_moneyReal.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})} você pode comprar ${momey_dolar.toLocaleString("pt-BR", {style: "currency", currency: "USD"})}`)
+    </script>
+</body>
+</html>
