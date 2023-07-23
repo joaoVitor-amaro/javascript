@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Medidas</h1>
+    <hr>
+    <script>
+        var metros = Number(window.prompt("Digite uma distância em metros:"))
+        var km = metros / 1000
+        var hm = metros / 100
+        var dam = metros / 10
+        var dm = metros * 10
+        var cm = metros * 100
+        var mm = metros * 1000
+        document.write(`1. ${km.toFixed(2)}Km<br>`)
+        document.write(`2. ${hm.toFixed(2)}Hm<br>`)
+        document.write(`3. ${dam.toFixed(2)}Dam<br>`)
+        document.write(`4. ${dm.toFixed(2)}Dm<br>`)
+        document.write(`5. ${cm.toFixed(2)}cm<br>`)
+        document.write(`6. ${mm.toFixed(2)}mm<br>`)
+    </script>
+</body>
+</html>
