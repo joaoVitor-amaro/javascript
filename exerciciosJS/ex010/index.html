@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        div {
+            width: 400px;
+            padding: 10px;
+            text-align: justify;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div id="corFundo">
+            <input type="button" value="Mudar Cor" id="MudarCor">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit molestias ex quo quaerat sunt facere consequuntur in dolorum iure. Ipsa at corrupti amet aut voluptatem, maiores cupiditate a saepe consectetur?</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae perspiciatis labore explicabo sed illo omnis, ab esse aspernatur dolor non consequuntur libero magnam nostrum deserunt numquam enim natus quos voluptate.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus tempora maiores minima repellat eum eveniet officiis ex ipsum, vel consequuntur molestias tempore quam accusantium adipisci. Eligendi perferendis adipisci autem distinctio!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, voluptates? Facere dignissimos quo quae velit beatae non optio. Iste, explicabo quam sed suscipit cumque possimus adipisci consequuntur iure qui porro?</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur in iusto, eius dolorem, modi magni deserunt voluptas, architecto expedita quas repellendus quasi nostrum maxime rem fuga at blanditiis illum veritatis!</p>
+        </div>
+    </main>
+    <script>
+        var mudarCor = document.getElementById("MudarCor")
+        var corFundo = document.getElementById("corFundo")
+        mudarCor.addEventListener("click", function() {
+            var rgbRed = Math.floor(250* Math.random() + 1) 
+            var rgbGreen = Math.floor(250* Math.random() + 1) 
+            var rgbBlue = Math.floor(250* Math.random() + 1) 
+            corFundo.style.backgroundColor = `rgb(${rgbRed}, ${rgbGreen}, ${rgbBlue})`
+        })
+    </script>
+</body>
+</html>
