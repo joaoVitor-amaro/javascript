@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #btn_contar {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contador de cliques</h1>
+    <input type="button" value="Clique aqui" id="btn_contar">
+    <input type="button" value="Limpar" id="btn_limpar">
+    <div>Cliques: <span id="res_cliques">0</span></div>
+    <script>
+        var btn_contar = document.getElementById("btn_contar")
+        var btn_limpar = document.getElementById("btn_limpar")
+        var cliques = document.getElementById("res_cliques")
+        var qt_clique = 0
+        btn_contar.addEventListener("click", function() {
+            qt_clique += 1
+            cliques.innerHTML = qt_clique
+        })
+        btn_limpar.addEventListener("click", function() {
+            qt_clique = 0
+            cliques.innerHTML = 0
+        })
+    </script>
+</body>
+</html>
