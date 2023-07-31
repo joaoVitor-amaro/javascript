@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        li {
+            border: 1px solid black;
+            width: 80px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" name="" id="seachInput">
+    <ul id="lista">
+        <li>futebol</li>
+        <li>Casa</li>
+        <li>Maçã</li>
+        <li>Banana</li>
+        <li>Laranja</li>
+        <li>Melancia</li>
+        <li>Uva</li>
+        <li>Morango</li>
+        <li>Pera</li>
+        <li>Mamão</li>
+        <li>Kiwi</li>
+        <li>Manga</li>
+    </ul>
+    <script>
+        var seachInput = document.getElementById("seachInput")
+        var dadosList = document.querySelectorAll("li")
+
+        seachInput.addEventListener("keyup", function() {
+            var pesquisa = seachInput.value
+            for(i = 0; i < dadosList.length; i++) {
+                var ContentList = dadosList[i]
+                var li = ContentList.textContent.toLocaleLowerCase().trim()
+                if (li.includes(pesquisa)) {
+                    ContentList.style.display = 'block'
+                } else {
+                    ContentList.style.display = 'none'
+                }
+            }
+        })
+    </script>
+</body>
+</html>
