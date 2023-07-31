@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Velocimetro</h1>
+    <label for="txtvel">Velocidade</label>
+    <input type="number" name="txtvel" id="txtvel">
+    <input type="button" value="Verificar" id="btn_velocidade">
+    <div id="res"></div>
+    <script>
+        
+        btn_velocidade.addEventListener("click", function() {
+            var velocidadeCarro = document.getElementById("txtvel").value
+            if (velocidadeCarro > 60) {
+                document.getElementById("res").innerHTML = "Velocidade ultrapassada. Carro multado"
+            } else {
+                document.getElementById("res").innerHTML = "Velocidade permitida, tenha um bom dia"
+            }
+        })
+      
+    </script>
+</body>
+</html>
