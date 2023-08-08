@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <label for="nota1">1° nota</label>
+        <input type="number" name="nota" id="nota1" min="0" max="10">
+    </div>
+    <div>
+        <label for="nota2">2° nota</label>
+        <input type="number" name="nota" id="nota2" min="0" max="10">
+    </div>
+    <div>
+        <input type="button" value="calcular" onclick="btn_nota()">
+    </div>
+    <div>
+        <p>Média: <span id="media"></span></p>
+        <p>Situação: <span id="situacao"></span></p>
+    </div>
+    <script>
+        function  btn_nota() {
+            var situacao = document.querySelector("#situacao")
+            var media_aluno = document.querySelector('#media')
+            var nota1 = Number(document.querySelector("#nota1").value)
+            var nota2 = Number(document.querySelector("#nota2").value)
+            var media = (nota1 + nota2) / 2
+            if (media >= 7 && media <= 10) {
+                media_aluno.innerHTML = media
+                situacao.innerHTML = "Aprovado"
+                situacao.style.color = "#10b310"
+            } else {
+                media_aluno.innerHTML = media.toFixed(1)
+                situacao.innerHTML = "Reprovado"
+                situacao.style.color = 'red'
+            }
+        }
+    </script>
+</body>
+</html>
