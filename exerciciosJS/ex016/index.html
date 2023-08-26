@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <main>
+        <h1>Cadastro</h1>
+        <p id="cadastrado"></p>
+        <div id="caixaName">
+            <label for="iname">Nome:</label>
+            <input type="text" name="name" id="iname">
+            <p id="erroName"></p>
+        </div>
+        <div>
+            <label for="iemail">E-mail:</label>
+            <input type="email" name="email" id="iemail" autocomplete="email">
+            <p id="erroEmail"></p>       
+        </div>
+        <div>
+            <label for="isenha">Senha</label>
+            <input type="password" name="senha" id="isenha">
+            <span onclick="pwd('isenha', 'pwd')">
+                <i id="pwd" class="ph ph ph-eye" ></i>
+            </span>
+            <p id="erroPwd"></p>
+        </div>
+        <div>
+            <label for="iconfimarPwd">Confirmar</label>
+            <input type="password" name="pwd" id="iconfimarPwd">
+            <span onclick="pwd('iconfimarPwd', 'pwdconfirm')">
+                <i id="pwdconfirm" class="ph ph ph-eye" ></i>
+            </span>
+            <p id="erroPwdConfirm"></p>
+        </div>
+        <div>
+            <input type="submit" value="enviar" id="cadastrar">
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
