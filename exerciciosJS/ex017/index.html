@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <main>
+        <section>
+            <div>
+                <input type="password" name="pwd" id="senha" placeholder="Digite a senha">
+                <i id="pwd" class="ph ph-eye-slash" ></i> 
+            </div>
+            <p id="itenspwd"><strong>a senha deve ser</strong></p>
+            <ul>
+                <li id="lengthcaractere">No mínimo 8 caracteres</li>
+                <li id="numbercaractere">1 número (0...9)</li>
+                <li id="loweCase">Letras Minúsculas (a...z)</li>
+                <li id="caractereEspec">1 Caractere especiaç (!...$)</li>
+                <li id="caractereUpperCase">Letras Maiúculas (A...Z)</li>
+            </ul>
+            <p id="sg"></p>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
