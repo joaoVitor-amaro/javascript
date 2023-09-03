@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="n1">
+    <input type="button" value="Enviar" id="btn">
+    <p id="resp">
+        <strong>Contagem:</strong>
+    </p>
+    <script>
+        document.getElementById("btn").addEventListener("click", function() {
+            var numberInput = Number(document.getElementById('n1').value)
+            var resp = document.getElementById("resp")
+            var cont = 1
+            resp.innerHTML = "<strong>Contagem: </strong>"
+            while (cont <= numberInput) {
+                var spanHtml = document.createElement("span")
+                spanHtml.textContent = `${cont}  `
+                cont++
+                resp.appendChild(spanHtml)
+            }
+           
+        })
+    </script>
+</body>
+</html>
