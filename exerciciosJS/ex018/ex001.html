@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        p#velUtrapassado{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>velocímetro</h1>
+    <div>
+        <label for="ivel">Velocidade do carro</label>
+        <input type="text" name="" id="ivel">
+        <input type="button" value="Veficar" id="btn">
+    </div>
+    <div id="resultado">
+
+    </div>
+    <script>
+        document.getElementById("btn").addEventListener("click", function() {
+            var vel_Carro = Number(document.getElementById("ivel").value)
+            var result = document.getElementById("resultado")
+            result.innerHTML = ""
+            var p = document.createElement("p")
+            var frase = "Valor permitido, tenha um ótimo dia"
+            if (vel_Carro > 80) {
+                var multa = (vel_Carro - 80) * 5
+                var multa = multa.toLocaleString("pt-br", {style: 'currency', currency: "BRL"})
+                p.setAttribute("id", "velUtrapassado")
+                frase = `Valor ultrapassado, você recebeu uma multa de ${multa}`
+            }
+            p.innerHTML = frase
+            result.appendChild(p)
+        })
+    </script>
+</body>
+</html>
