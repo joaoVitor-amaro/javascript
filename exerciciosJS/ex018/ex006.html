@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            font-size: 1.8em;
+        }
+        p#erro { 
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Promoção</h1>
+    <div>
+        <label for="ipreco">Preço</label>
+        <input type="text" id="ipreco">
+    </div>
+    <div>
+        <input type="radio" name="sexo" id="imasc" checked>
+        <label for="imasc">M</label>
+        <input type="radio" name="sexo" id="ifem">
+        <label for="ifem">F</label>
+    </div>
+    <div>
+        <input type="button" value="Calcular" onclick="calcularDesconto()">
+    </div>
+    <div id="resultado"></div>
+    <script>
+        function calcularDesconto() {
+            var sexo = document.getElementsByName("sexo")
+            var preco = document.getElementById("ipreco").value 
+            var resul = document.querySelector("#resultado")
+            var p = document.createElement("p")
+            var desconto = 0
+            var desconto_preco = 0
+            resul.innerHTML = ""
+            if (sexo[0].checked) {
+               desconto =  5
+               desconto_preco = preco - (preco * (desconto / 100))
+            } else {
+                desconto = 13
+                desconto_preco = preco - (preco * (desconto / 100))
+            }
+            p.innerHTML = `Com o desconto de ${desconto}% o preço final ficou ${desconto_preco.toLocaleString("pt-br", {style: 'currency', currency: 'BRL'})}`
+            resul.appendChild(p)
+        }
+    </script>
+</body>
+</html>

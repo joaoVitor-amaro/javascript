@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Analisar de triângulo</h1> 
+    <div>
+        <label for="segmen1">Segmento 1</label>
+        <input type="text" id="segmento1">
+    </div>
+    <div>
+        <label for="segmen2">Segmento 2</label>
+        <input type="text" id="segmento2">
+    </div>
+    <div>
+        <label for="segmen3">Segmento 3</label>
+        <input type="text" id="segmento3">
+    </div>
+    <div>
+        <input type="button" value="Verificar" id="btn_triangulo">
+    </div>
+    <div id="resultado"></div>
+    <script>
+        var btn_triangulo = document.querySelector("#btn_triangulo")
+        btn_triangulo.addEventListener("click", function() {
+            var segment1 = Number(document.querySelector("#segmento1").value) 
+            var segment2 = Number(document.querySelector("#segmento2").value)
+            var segment3 = Number(document.querySelector("#segmento3").value) 
+            var result = document.querySelector("#resultado")
+            var p = document.createElement("p")
+            result.innerHTML = ""
+            //Condição para verificar se pode formar um triangulo
+            if (segment1 + segment2 > segment3 && segment1 + segment3 > segment2 && segment2 + segment3 > segment1) {
+                p.innerHTML = "Pode formar um triângulo"
+            } else {
+                p.innerHTML = "Não pode formar um triângulo"
+            }
+            result.appendChild(p)
+        })
+    </script>
+</body>
+</html>

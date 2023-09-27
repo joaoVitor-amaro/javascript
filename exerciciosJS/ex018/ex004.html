@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            font-size: 1.8em;
+        }
+        #erro { 
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ano BISSEXTO</h1>
+    <div>
+        <label for="iano"></label>
+        <input type="text" id="iano">
+        <input type="button" value="Veficar" onclick="anoBissexto()">
+    </div>
+    <div id="resultado"></div>
+    <script>
+        function anoBissexto() {
+            var ano = document.querySelector("#iano").value
+            var resulta = document.querySelector("#resultado")
+            var p = document.createElement("p")
+            resulta.innerHTML = ""
+            if (ano === "") {
+                p.innerHTML = "Erro, preenche o campo"
+                p.setAttribute("id", "erro")
+            } else {
+               ano = Number(ano)
+               if (ano % 4 === 0 && ano % 100 != 0 || ano % 400 === 0) {
+                p.innerHTML = "É um ano BISSEXTO"
+               } else {
+                p.innerHTML = "Não é um ano BISSEXTO"
+               }
+            }
+            resulta.appendChild(p)
+        }
+    </script>
+</body>
+</html>

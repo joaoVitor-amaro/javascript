@@ -6,6 +6,32 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div>
+        <label for="iano_nasc">Ano de nascimento</label>
+        <input type="text" id="iano_nasc">
+        <input type="button" value="verificar" onclick="veficarIdade()">
+    </div>
+    <div id="resultado">
+
+    </div>
+    <script>
+        function veficarIdade() {
+            var ano_atual = new Date().getFullYear()
+            var ano_nasc = Number(document.querySelector("#iano_nasc").value)
+            var idade = ano_atual - ano_nasc
+            var resul = document.querySelector("#resultado")
+            var p_idade = document.createElement("p")
+            resul.innerHTML = ""
+            //verificar se pode votar na eleição//
+            if (idade >= 16) {
+                //Votação liberada//
+                p_idade.innerHTML = "Você pode votar"
+            } else {
+                //Votação negada//
+                p_idade.innerHTML = "Não pode votar"
+            }
+            resul.appendChild(p_idade)
+        }
+    </script>
 </body>
 </html>

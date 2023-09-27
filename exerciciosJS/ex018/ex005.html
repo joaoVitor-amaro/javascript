@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            font-size: 1.8em;
+        }
+        p#erro { 
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Alistamento Militar</h1>
+    <div>
+        <label for="iano_nasc">Ano de nascimento</label>
+        <input type="text" id="iano_nasc">
+        <input type="button" value="Veficar" onclick="alistamentoMilitar()">
+    </div>
+    <div id="resulta"></div>
+    <script>
+        function alistamentoMilitar() {
+            var ano_nasc = Number(document.querySelector("#iano_nasc").value) 
+            var resultado = document.querySelector("#resulta")
+            var p = document.createElement("p")
+            var ano_atual = new Date().getFullYear()
+            var idade = ano_atual - ano_nasc
+            resultado.innerHTML = ""
+            //Verificar se o campo está vazio ou é maior que o ano atual
+            if (String(ano_nasc) === "") {
+                p.innerHTML = "Erro, preenche o campo"
+                p.setAttribute("id", "erro")
+            } else { //condição do campo não vazio
+                var tempoAlistamento = 18
+                if (idade >= 18) {
+                    tempoAlistamento = idade - tempoAlistamento
+                    if (tempoAlistamento === 0) {
+                        p.innerHTML = "Chegou o ano do seu alistamento"
+                    } else {
+                        p.innerHTML = `Já se passaram ${tempoAlistamento} ano(s) do seu alistamento`
+                    }
+                } else { //Tempo que falta para alistamento
+                    tempoAlistamento = tempoAlistamento - idade
+                    p.innerHTML = `Ainda faltam ${tempoAlistamento} anos para o alistamento`
+                }
+            }
+            resultado.appendChild(p)
+        }
+    </script>
+</body>
+</html>
