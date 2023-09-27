@@ -16,9 +16,8 @@
     </div>
     <script>
         function veficarIdade() {
-            var ano_atual = new Date().getFullYear()
             var ano_nasc = Number(document.querySelector("#iano_nasc").value)
-            var idade = ano_atual - ano_nasc
+            var idade = new Date().getFullYear() - ano_nasc
             var resul = document.querySelector("#resultado")
             var p_idade = document.createElement("p")
             resul.innerHTML = ""
