@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Menores de idade</h1>
+    <div>
+        <label for="inome">Nome</label>
+        <input type="text" id="inome">
+    </div>
+    <div>
+        <label for="iage">Idade</label>
+        <input type="text" id="iage">
+    </div>
+    <div>
+        <input type="button" value="Cadastrar" onclick="cadastrar()">
+        <input type="button" value="Acessar Dados" onclick="mostrar_dados()">
+    </div>
+    <div id="resultado"></div>
+    <script>
+        var nome = []
+        var idade = [] 
+        function cadastrar() {
+            var name_input = document.querySelector("#inome").value
+            var idade_input = document.querySelector("#iage").value
+            if (name_input == "" || idade_input == "") {
+                alert("Erro! Preenche os campos")
+            } else {
+                nome.push(name_input)
+                idade.push(idade_input)
+            }    
+            console.log(nome)
+            console.log(idade)
+        }
+        function mostrar_dados() {
+            var result = document.querySelector("#resultado")
+            result.innerHTML = ""
+            var p = document.createElement("p")
+            for(var i = 0, max=idade.length; i < max; i++) {
+                if (idade[i] < 18) {
+                    var p = document.createElement("p")  
+                    p.innerHTML = `Nome: ${nome[i]} <br>
+                    Idade: ${idade[i]}`
+                    result.appendChild(p)
+                }
+           }
+        }
+    </script>
+</body>
+</html>

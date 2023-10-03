@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sequência de Fibonacci</h1> 
+    <div>
+        <label for="iqt_termo">Quantidade de termos:</label>
+        <input type="text" id="iqt_termo">
+        <input type="button" value="Calcular" onclick="fibonacci()">
+    </div>  
+    <div id="resultado"></div>
+    <script>
+        function fibonacci() {
+            var qt_termos = Number(document.querySelector("#iqt_termo").value)
+            var list = [1,1]
+            var p1_termo = 0
+            var p2_termo = 0
+            for (var i = list.length; i <= qt_termos; i++) {
+                p1_termo = list[list.length - 2]
+                p2_termo = list[list.length - 1]
+                list[i] = p1_termo + p2_termo
+            }
+
+            var result = document.querySelector("#resultado")
+            result.innerHTML = "CONTAR: "
+            for (valores of list) {
+                var span = document.createElement("span")
+                span.innerHTML = `${valores} => `
+                result.appendChild(span)
+            }
+            result.innerHTML += " Fim"
+            console.log(list)
+        }
+    </script>
+</body>
+</html>

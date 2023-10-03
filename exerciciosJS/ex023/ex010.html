@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Descobridor do número[1-15]</h1>
+    <div>
+        <label for="inumber">Number</label>
+        <input type="text" id="inumber">
+        <input type="button" value="Verificar" onclick="verificarNumber()">
+    </div>
+    <div id="resultado"></div>
+    <script>
+        function verificarNumber() {
+            var number = document.querySelector("#inumber").value
+            var result = document.querySelector("#resultado")
+            result.innerHTML = ""
+            if (number == "" || number > 15) {
+                alert("Erro! Digite um número entre 1 e 15")
+            } else {
+                var list = []
+                for (var i = 0; i < 30; i++) {
+                    list[i] = Math.floor(Math.random() * 15)
+                }
+                console.log(list)
+                var cont_numberSorteado = 0
+                for (var indice_valorList in list) {
+                    if (Number(number) === list[indice_valorList]) {
+                        var p = document.createElement('p')
+                        p.innerHTML = `Número ${number} encontrado na posição ${indice_valorList}`
+                        result.appendChild(p)
+                        cont_numberSorteado++
+                    }
+                }
+                p.innerHTML += `<br><br>Números sorteados: <strong>${cont_numberSorteado}</strong>`
+            }
+        }
+    </script>
+</body>
+</html>
