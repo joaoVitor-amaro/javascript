@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Maior e o menor valor da lista</h2>
+    <div>
+        <input type="text" placeholder="Number" id="number">
+        <input type="button" value="Adicionar" onclick="addLis()">
+        <input type="button" value="Finalizar" onclick="finalizar()">
+    </div>
+    <div id="resultado">
+
+    </div>
+    <script>   
+        var list = [] 
+        var result = document.querySelector("#resultado")
+        function addLis() {
+            var number_input = Number(document.querySelector("#number").value) 
+            list.push(number_input)
+            console.log(list)
+        }
+
+        function maiorValorList() {
+            var maior = 0
+            for (var i = 0, maxList = list.length; i < maxList; i++) {
+                if (list.length == 1) {
+                    maior = list[i]
+                } else {
+                    if (list[i] > maior) {
+                        maior = list[i] 
+                    }
+                }
+            }
+            return maior
+
+        }
+
+        function menorValorList() {
+            var menor = 0
+            menor = list[0]
+            for (var i = 0, maxList = list.length; i < maxList; i++) {
+                if (list.length === 1) {
+                    menor = list[i]
+                } else {
+                    if (list[i] < menor) {
+                        menor = list[i]
+                    }
+                }
+            }
+            return menor
+        }
+
+        function finalizar() {
+            var indiceListMaior = []
+            var indiceListMenor= []
+            var maior_NumberList = maiorValorList()
+            var menor_NumberList = menorValorList()
+            for (var indice in list) {
+                if (maior_NumberList == list[indice]) {
+                    indiceListMaior.push(indice)
+                }
+                if (menor_NumberList == list[indice]) {
+                    indiceListMenor.push(indice)
+                }
+            }
+            var p_maior = document.createElement("p")
+            var p_menor = document.createElement("p")
+            p_maior.innerHTML = `O maior valor é ${maior_NumberList} nas posições ${indiceListMaior}`
+            p_menor.innerHTML = `O menor valor é ${menor_NumberList} nas posições ${indiceListMenor}`
+            result.appendChild(p_maior)
+            result.appendChild(p_menor)
+        }
+    </script>
+</body>
+</html>
