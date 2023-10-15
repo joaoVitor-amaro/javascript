@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Palídromo</h1>
+    <div>
+        <label for="iname">Nome:</label>
+        <input type="text" id="iname">
+        <input type="button" value="Verificar" onclick="resultado_palidromo()">
+    </div>
+    <div id="resultado"></div>
+    <script> 
+        var result = document.querySelector("#resultado")
+        
+        function validitor(name) {
+            if (name === "") {
+                return false
+            } else {
+                return true
+            }
+        }
+        
+        function verificar_palidromo(name, comprimentoPalavra) {
+            var nameInverso = ""
+            for(var i = comprimentoPalavra-1, max = 0; i >= max; i--) {
+                nameInverso += name[i]
+            }
+            if (nameInverso == name) {
+                return `O inverso de ${name} é ${nameInverso}<br> É um palíndromo`
+            } else {
+                return "nao"
+            }
+        }
+
+        function resultado_palidromo() {
+            var nome = document.querySelector("#iname") 
+            var NamesemEspacos = nome.value.toLowerCase().replace(/\s+/g, '')
+            var comprimentoDoValor = NamesemEspacos.length
+            result.innerHTML = ""
+            if(validitor(nome.value)) {
+                result.innerHTML = verificar_palidromo(NamesemEspacos, comprimentoDoValor)
+            } else {
+                alert("Não")
+            }
+        }
+        
+    </script>
+</body>
+</html>

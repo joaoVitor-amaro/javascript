@@ -32,17 +32,35 @@ function adicionar() {
     } else {
         alert("erro")
     }
-    console.log(valores)
+    number.value = ""
+    number.focus()
+    
 }
 
 //verfica a quantidade de elementos na lista
 function finalizar() {
-    const qt_valoresList = valores.length
-    if (qt_valoresList > 0) {
-        const p_qtList = document.createElement("p") 
-        p_qtList.innerHTML = `A lista possui ${qt_valoresList} valores`
-        result.appendChild(p_qtList)
-    } else {
+    if (valores.length == 0) {
         alert("Sem valores na lista. Adcione os valores")
+    } else {
+        let qt_valoresList = valores.length
+        let maior_valor = valores[0]
+        let menor_valor = valores[0]
+        let soma_list = 0
+        for (let itens of valores) {
+            soma_list += itens 
+            if (itens > maior_valor) {
+                maior_valor = itens
+            }
+
+            if(itens < menor_valor) {
+                menor_valor = itens
+            }
+        }
+        let media_lis = soma_list/valores.length
+        result.innerHTML = `Ao todo, tems ${qt_valoresList} elementos <br>`
+        result.innerHTML += `O maior valor encontrado foi ${maior_valor} <br>`
+        result.innerHTML += `O menor valor encontrado foi ${menor_valor} <br>`
+        result.innerHTML = `Somando todos os valores, temos ${soma_list}`
+        result.innerHTML += `A média dos valores digitados é ${media_lis.toFixed(2)}`
     }
 }
