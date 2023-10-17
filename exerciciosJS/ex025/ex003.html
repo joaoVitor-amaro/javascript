@@ -19,20 +19,17 @@
         var list = [] 
         var result = document.querySelector("#resultado")
         function addLis() {
+            result.innerHTML = ""
             var number_input = Number(document.querySelector("#number").value) 
             list.push(number_input)
             console.log(list)
         }
 
         function maiorValorList() {
-            var maior = 0
-            for (var i = 0, maxList = list.length; i < maxList; i++) {
-                if (list.length == 1) {
-                    maior = list[i]
-                } else {
-                    if (list[i] > maior) {
-                        maior = list[i] 
-                    }
+            var maior = list[0]
+            for (var valores of list) {
+                if (valores > maior) {
+                    maior = valores
                 }
             }
             return maior
@@ -40,15 +37,10 @@
         }
 
         function menorValorList() {
-            var menor = 0
-            menor = list[0]
-            for (var i = 0, maxList = list.length; i < maxList; i++) {
-                if (list.length === 1) {
-                    menor = list[i]
-                } else {
-                    if (list[i] < menor) {
-                        menor = list[i]
-                    }
+            var menor = list[0]
+            for (var valores of list) {
+                if (valores < menor) {
+                    menor = valores
                 }
             }
             return menor
@@ -67,6 +59,7 @@
                     indiceListMenor.push(indice)
                 }
             }
+            result.innerHTML = ""
             var p_maior = document.createElement("p")
             var p_menor = document.createElement("p")
             p_maior.innerHTML = `O maior valor é ${maior_NumberList} nas posições ${indiceListMaior}`
