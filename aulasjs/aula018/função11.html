@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClearTimeout e ClearInterval</title>
+</head>
+<body>
+    <script>
+        // ClearTimeout
+        var x = 0
+        var mytime = setTimeout(() => {
+            console.log("o x é 0")
+        }, 1500)
+        x = 5
+        if (x > 0) {
+            clearTimeout(mytime)
+            console.log("x passou de 0")
+        }
+
+        // ClearInterval
+        var myinterval = setInterval(() => {
+            console.log("Imprimido o interval")
+        }, 500)
+        
+        setTimeout(() => {
+            console.log("Não precisamos mais repertir")
+            clearInterval(myinterval)
+        }, 1500)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="clicar" onclick="clicar()">
+    <div id="result"></div>
+    <script>
+        let res = document.querySelector("#result")
+        let lis = [5, 4, 6]
+        function clicar() {
+            minhaFuncaoArrow("algum argumento")
+            soma(15,10)
+        }
+        const minhaFuncaoArrow = (parametro) => {
+            console.log(`Chamou a função com ${parametro}`);
+        };
+        const soma = (v1,v2) => {
+            var p1 = document.createElement('p')
+            p1.innerHTML = `${v1} + ${v2}`
+            return res.appendChild(p1)
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script>
+        function exibir(num) {
+            console.log("A operação resultou" + num)
+        }
+        function soma(n1, n2, Callback) {
+            var ope = n1 + n2
+            Callback(ope)
+        }
+
+        function multiplicacao(n1, n2, cb) {
+            var ope = n1 * n2
+            cb(ope)
+        }
+
+        soma(5,2, exibir)
+        multiplicacao(5,2, exibir)
+    </script>
+</body>
+</html>
