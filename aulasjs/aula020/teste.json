@@ -1,0 +1,9 @@
+{
+    "nome": "João",
+    "idade": 15,
+    "list": [5,2,6],
+    "estátrabalhando": true,
+    "detalhes_profissao": {
+        "profissao": "Programador"
+    }
+} 
