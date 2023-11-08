@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrizes</title>
+</head>
+<body>
+    <section id="result"></section>
+    <script>
+        var result = document.querySelector('#result')
+        const matriz = [
+            ["Uva", 'maca', 'ok'], 
+            ["pera", "cacau", 'ap'],
+            ['ovo', 'torta', 'abacaxi']
+        ]
+        console.log(matriz[1][0])
+        for (var i = 0; i < matriz.length; i++) {
+            for (var j = 0; j < matriz[i].length; j++) {
+                if (i === j) {
+                    var p = document.createElement('p')
+                    p.innerHTML = matriz[i][j]
+                    result.appendChild(p) 
+                }
+            }
+        }
+    </script>
+</body>
+</html>
