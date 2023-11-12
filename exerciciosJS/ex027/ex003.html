@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p > span {
+            margin: 0px 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Procurar um valor na Matriz</h1>
+    <div>
+        <input type="text" name="inumber" id="inumber">
+        <input type="button" value="Procurar" onclick="prucurar()">
+    </div>
+    <section id="matrizHtml"></section>
+    <section id="resp"></section>
+    <script>
+        const matriz = [] 
+        for(var linha=0; linha < 10; linha++) {
+            matriz[linha] = []
+            for(var coluna = 0; coluna < 10; coluna++) {
+                matriz[linha][coluna] = Math.floor(Math.random() * 89)
+            }
+        }
+        function matrizInterada() {
+            const div = document.createElement('div')
+            for(var linha=0; linha < matriz.length; linha++) {
+                const p = document.createElement('p')
+                for(var coluna = 0; coluna < matriz[linha].length; coluna++) {
+                    const span = document.createElement('span')
+                    span.innerHTML = matriz[linha][coluna]
+                    p.appendChild(span)
+                    div.appendChild(p)
+                }
+            } 
+            return div
+        }
+
+        function prucurar() {
+            const resp = document.querySelector('#resp')
+            const matrizHtml = document.querySelector("#matrizHtml")
+            const numberInput = document.querySelector("#inumber").value
+            for(var linha=0; linha < matriz.length; linha++) {
+                for(var coluna = 0; coluna < matriz[linha].length; coluna++) {
+                    if (numberInput == matriz[linha][coluna]) {
+                        const p = document.createElement('p')
+                        p.innerHTML = `número ${numberInput} encontado na linha ${linha} e coluna ${coluna}`
+                        resp.appendChild(p)
+                    }
+                }
+            }
+            matrizHtml.appendChild(matrizInterada())
+        }
+    </script>
+</body>
+</html>

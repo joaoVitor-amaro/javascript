@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        span {
+            margin: 0px 20px;
+        }
+    </style>
+</head>
+<body>
+    <section id="matrizhtml"></section>
+    <section id="resp"></section>
+    <script>
+        // criar uma matriz automática
+        const matriz = []
+        for (var i = 0; i < 10; i++) {
+            matriz[i] = []
+            for (var j = 0; j < 10; j++) {
+                matriz[i][j] = Math.floor(Math.random() * 100)
+            }
+        } 
+
+        const matrizhtml = document.querySelector('#matrizhtml')
+        for(var linha = 0; linha < matriz.length; linha++) {
+            var p = document.createElement('p')
+            for(var coluna=0; coluna < matriz[linha].length; coluna++) {
+                var span = document.createElement('span')
+                span.innerHTML = matriz[linha][coluna]
+                p.appendChild(span)
+                matrizhtml.appendChild(p)
+            }
+        }
+
+        //Procura o maior valor da matriz e a sua posição
+        var maiorValorMatriz = 0
+        var lineMaiorValueMatriz = 0
+        var colunaMaiorValueMatriz = 0
+        for(var linha = 0; linha < matriz.length; linha++) {
+            for(var coluna=0; coluna < matriz[linha].length; coluna++) {
+                if (matriz[linha][coluna] > maiorValorMatriz){
+                    maiorValorMatriz = matriz[linha][coluna]
+                    lineMaiorValueMatriz = linha
+                    colunaMaiorValueMatriz = coluna
+                }
+            }
+        }
+        document.querySelector('#resp').innerHTML=`O maior valor é ${maiorValorMatriz} encontrado na linha ${lineMaiorValueMatriz} e coluna ${colunaMaiorValueMatriz}`
+    </script>
+</body>
+</html>
