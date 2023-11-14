@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetor</title>
+    <style>
+        span {
+            margin: 0px 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Soma de dois valores do Vetor</h1>
+    <div>
+        <label for="ipos1">Posição 1</label>
+        <input type="text" name="ipos1" id="ipos1">
+    </div>
+    <div>
+        <label for="ipos2">Posição 1</label>
+        <input type="text" name="ipos1" id="ipos2">
+    </div>
+    <div>
+        <input type="button" value="Calcular" onclick="calcular()">
+    </div>
+    <section id="vetorHtml">
+        <h3>Vetores</h3>
+    </section>
+    <section id="resp"></section>
+    <script>
+        const vetor = []
+        const vetorHtml = document.querySelector('#vetorHtml')
+        const resp = document.querySelector("#resp")
+        for(var i = 0; i < 12; i++) {
+            vetor.push(Math.floor(Math.random() * 15))
+        }
+
+        var p = document.createElement('p')
+        for(var i = 0; i < vetor.length; i++) {
+            var span = document.createElement('span')
+            span.innerHTML = vetor[i]
+            p.appendChild(span)
+        }
+        vetorHtml.appendChild(p)
+        console.log(vetor)
+
+        
+        function calcular() {
+            let posiOne = document.querySelector('#ipos1').value 
+            let posiTwo = document.querySelector("#ipos2").value
+            resp.innerHTML = ''
+            if (posiOne < vetor.length && posiTwo < vetor.length) {
+                let sm = vetor[posiOne] + vetor[posiTwo]
+                var p = document.createElement('p')
+                p.innerHTML = `A soma dos vetores na posição ${posiOne} e ${posiTwo} é igual a ${sm}`
+                resp.appendChild(p)
+            } else {
+                alert('erro')
+            }
+            
+        }
+    </script>
+</body>
+</html>
